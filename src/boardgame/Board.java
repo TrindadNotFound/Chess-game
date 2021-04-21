@@ -69,6 +69,29 @@ public class Board
 	}
 	
 	
+	//Remove piece from board
+	public Piece removePiece(Position position)
+	{
+		if(!positionExists(position))
+		{
+			throw new BoardException("Warning: Position doesn't exist");
+		}
+		
+		if(piece(position) == null)
+		{
+			return null;
+		}
+		
+		Piece aux = piece(position);
+		aux.position = null;
+		
+		pieces[position.getRow()][position.getColumn()] = null;
+		
+		return aux;
+	}
+	
+	
+	
 	
 	//Testing whether position exists across the line and the column
 	private boolean positionExists(int row, int column)
