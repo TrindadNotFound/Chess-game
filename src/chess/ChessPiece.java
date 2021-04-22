@@ -2,6 +2,7 @@ package chess;
 
 import boardgame.Board;
 import boardgame.Piece;
+import boardgame.Position;
 
 public abstract class ChessPiece extends Piece
 {
@@ -24,5 +25,13 @@ public abstract class ChessPiece extends Piece
 	}
 
 	
+	
+	//Allows you to move a piece to a position where an enemy piece exist
+	protected boolean isThereOpponentPiece(Position position)
+	{
+		ChessPiece p = (ChessPiece)getBoard().piece(position);
+		//Check if piece color is different from the piece that's going moved
+		return p != null && p.getColor() != color;
+	}
 	
 }
