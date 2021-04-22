@@ -35,9 +35,17 @@ public class ChessMatch
 	
 	private void validateSourcePosition(Position position)
 	{
+		//Testing if exist any piece in source position
 		if(!board.thereIsAPiece(position))
 		{
 			throw new ChessException("Warning: There is no piece on source position");
+		}
+		
+		
+		//Testing if exist any possible move
+		if(!board.piece(position).isThereAnyPossibleMove())
+		{
+			throw new ChessException("Warning: There is no possible moves for piece");
 		}
 	}
 	

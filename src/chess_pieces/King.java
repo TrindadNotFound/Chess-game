@@ -19,4 +19,15 @@ public class King extends ChessPiece
 		//(K)ing is a piece of chess. In portuguese means "Rei"
 		return "K";
 	}
+
+
+	@Override 
+	public boolean[][] possibleMoves() 
+	{
+		//Possible moves for King piece
+		
+		
+		boolean[][] matriz = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		return matriz;
+	}
 }

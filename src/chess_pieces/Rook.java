@@ -19,4 +19,16 @@ public class Rook extends ChessPiece
 		//(R)ook is a piece of chess. In portuguese means "Torre"
 		return "R";
 	}
+	
+	
+	
+	@Override 
+	public boolean[][] possibleMoves() 
+	{
+		//Possible moves for Rook piece
+		
+		
+		boolean[][] matriz = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		return matriz;
+	}
 }
