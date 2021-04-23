@@ -53,7 +53,7 @@ public class UI
 			System.out.print(ANSI_RED + "|" + ANSI_RESET + (8-i) + "  ");
 			for(int ii = 0; ii<pieces.length; ii++)
 			{
-				printPiece(pieces[i][ii]);
+				printPiece(pieces[i][ii], false);
 			}
 			System.out.println(ANSI_RED + "|" + ANSI_RESET);
 		}
@@ -69,12 +69,52 @@ public class UI
 	}
 	
 	
-	private static void printPiece(ChessPiece piece)
+	
+	//Show how many possible movements have and paint them
+	public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves)
 	{
+		System.out.println();
+		System.out.println(ANSI_GREEN_BACKGROUND + ANSI_BLACK + "  --- CHESS GAME --- " + ANSI_RESET);
+		
+		//Top Border
+		System.out.println(ANSI_RED + "_____________________" + ANSI_RESET);
+		
+		
+		//Print game board
+		for(int i = 0; i<pieces.length; i++)
+		{
+			System.out.print(ANSI_RED + "|" + ANSI_RESET + (8-i) + "  ");
+			for(int ii = 0; ii<pieces.length; ii++)
+			{
+				printPiece(pieces[i][ii], possibleMoves[i][ii]);
+			}
+			System.out.println(ANSI_RED + "|" + ANSI_RESET);
+		}
+		System.out.println(ANSI_RED + "|" + ANSI_RESET + "   a b c d e f g h " + ANSI_RED + "|" + ANSI_RESET);
+		
+		//Bottom Boarder
+		System.out.println(ANSI_RED + "|___________________|" + ANSI_RESET);
+		
+		System.out.println();
+		
+		System.out.println(ANSI_GREEN_BACKGROUND + ANSI_BLACK + "Green" + ANSI_RESET +  " = White pieces");
+		System.out.println(ANSI_YELLOW_BACKGROUND + ANSI_BLACK + "Yellow" + ANSI_RESET + " = Black pieces");
+	}
+	
+	
+	
+	private static void printPiece(ChessPiece piece, boolean background)
+	{
+		//Paint background in blue
+		if(background)
+		{
+			System.out.print(ANSI_BLUE_BACKGROUND);
+		}
+		
 		//Print pieces and empty positions
 		if(piece == null)
 		{
-			System.out.print("-");
+			System.out.print("-" + ANSI_RESET);
 		}
 		else
 		{

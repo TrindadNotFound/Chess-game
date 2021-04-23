@@ -95,7 +95,7 @@ public class ChessMatch
 	
 	
 	
-	//Move a piece from actual position to another position
+	//Move a piece from actual position to another position --------
 	private Piece makeMove(Position source, Position target)
 	{
 		Piece p = board.removePiece(source);
@@ -105,6 +105,17 @@ public class ChessMatch
 		
 		return capturePiece;
 	}
+	
+	
+	
+	public boolean[][] possibleMoves(ChessPosition sourcePosition)
+	{
+		Position position = sourcePosition.toPosition();
+		validateSourcePosition(position);
+		
+		return board.piece(position).possibleMoves();
+	}
+	
 	
 	
 	
@@ -120,7 +131,9 @@ public class ChessMatch
 	
 		return (ChessPiece)capturePiece;
 	}
-	//----------------------------------------------------------
+	//---------------------------------------------------------------
+	
+	
 	
 	
 }
