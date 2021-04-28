@@ -19,7 +19,8 @@ public class Program
 		
 		List<ChessPiece> capturedList = new ArrayList<>();
 		
-		while(true)
+		//While checkMate != true run program
+		while(!chessMatch.getCheckMate())
 		{
 			try
 			{
@@ -64,5 +65,7 @@ public class Program
 			}
 		}
 		
+		UI.clearScreen();
+		UI.printMatch(chessMatch, capturedList);
 	}
 }
