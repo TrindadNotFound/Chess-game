@@ -173,6 +173,11 @@ public class UI
 			System.out.println("Waiting player: " + ANSI_GREEN + chessMatch.getCurrentPlayer() + ANSI_RESET);
 		}
 		
+		
+		if(chessMatch.getCheck())
+		{
+			System.out.println(ANSI_RED_BACKGROUND + "CHECK!" + ANSI_RESET);
+		}
 	}
 	
 	

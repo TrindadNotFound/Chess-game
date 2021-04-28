@@ -18,12 +18,18 @@ public abstract class ChessPiece extends Piece
 
 
 	
-	//Getter
+	//Getters
 	public Color getColor() 
 	{
 		return color;
 	}
 
+	
+	public ChessPosition getChessPosition()
+	{
+		return ChessPosition .fromPosition(position);
+	}
+	
 	
 	
 	//Allows you to move a piece to a position where an enemy piece exist
