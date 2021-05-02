@@ -14,9 +14,12 @@ public class Pawn extends ChessPiece
 	}
 
 	
-	
-	
-	
+	@Override
+	public String toString()
+	{
+		//(P)awn is a piece of chess. In portuguese means "Pẽao"
+		return "P";
+	}
 	
 	
 	@Override
@@ -106,17 +109,5 @@ public class Pawn extends ChessPiece
 		
 		return matrix;
 	}
-
-
-	@Override
-	public String toString()
-	{
-		return "P";
-	}
-
-
-
-
-	
 
 }

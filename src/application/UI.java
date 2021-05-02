@@ -45,7 +45,6 @@ public class UI
 	
 	public static void printBoard(ChessPiece[][] pieces)
 	{
-		System.out.println();
 		System.out.println(ANSI_GREEN_BACKGROUND + ANSI_BLACK + "  --- CHESS GAME --- " + ANSI_RESET);
 		//Top Border
 		System.out.println(ANSI_RED + "_____________________" + ANSI_RESET);
