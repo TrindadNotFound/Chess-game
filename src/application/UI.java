@@ -76,7 +76,6 @@ public class UI
 	//Show how many possible movements have and paint them
 	public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves)
 	{
-		System.out.println();
 		System.out.println(ANSI_GREEN_BACKGROUND + ANSI_BLACK + "  --- CHESS GAME --- " + ANSI_RESET);
 		
 		//Top Border
