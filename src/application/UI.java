@@ -139,7 +139,7 @@ public class UI
 	{
 		try 
 		{
-			String s = sc.nextLine();
+			String s = sc.nextLine().toLowerCase();
 			
 			char column = s.charAt(0);
 			
